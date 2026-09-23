@@ -20,6 +20,11 @@
             const g = Number(document.getElementById("guess").value);
             const result = document.getElementById("result");
 
+            if (!Number.isInteger(g) || g < 1 || g > 100) {
+                result.textContent = "Please enter a number between 1 and 100.";
+                return;
+            }
+
             attempts++;
 
             if (g === secret) {
